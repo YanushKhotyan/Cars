@@ -1,4 +1,4 @@
-package Cars;
+package cars;
 
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
@@ -53,6 +53,16 @@ public class Bus extends Cars {
     @Override
     public void limitFuel() {
         System.out.println("Bus fuel limit is 500 km/h ");
+    }
+
+    @Override
+    public String toString() {
+        return "Bus{" +
+                "seatingCapacity=" + seatingCapacity +
+                ", topSpeed=" + topSpeed +
+                ", color='" + color + '\'' +
+                ", name='" + name + '\'' +
+                '}';
     }
 
     public Bus(String model, String complication, int seatingCapacity, double topSpeed) {

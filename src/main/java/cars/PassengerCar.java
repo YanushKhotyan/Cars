@@ -1,13 +1,26 @@
-package Cars;
+package cars;
 
 public class PassengerCar extends Cars{
 
     private String nameOfTuningStudio;
-    private boolean automaticTransmission;
+    private String automaticTransmission;
     private String lowCost;
     private String maxSpeed;
 
 
+    @Override
+    public String toString() {
+        return "PassengerCar{" +
+                "nameOfTuningStudio='" + nameOfTuningStudio + '\'' +
+                ", automaticTransmission='" + automaticTransmission + '\'' +
+                ", lowCost='" + lowCost + '\'' +
+                ", maxSpeed='" + maxSpeed + '\'' +
+                '}';
+    }
+
+    public PassengerCar(String model, String complication) {
+        super(model, complication);
+    }
 
     public String getLowCost() {
         return lowCost;
@@ -35,11 +48,6 @@ public class PassengerCar extends Cars{
         System.out.println("Bus fuel limit is 600 km/h ");
     }
 
-    public PassengerCar(String model, String complication, String nameOfTuningStudio, boolean automaticTransmission) {
-        super(model, complication);
-        this.nameOfTuningStudio = nameOfTuningStudio;
-        this.automaticTransmission = automaticTransmission;
-    }
 
     public String getNameOfTuningStudio() {
         return nameOfTuningStudio;
@@ -49,11 +57,11 @@ public class PassengerCar extends Cars{
         this.nameOfTuningStudio = nameOfTuningStudio;
     }
 
-    public boolean isAutomaticTransmission() {
+    public String getAutomaticTransmission() {
         return automaticTransmission;
     }
 
-    public void setAutomaticTransmission(boolean automaticTransmission) {
+    public void setAutomaticTransmission(String automaticTransmission) {
         this.automaticTransmission = automaticTransmission;
     }
 }

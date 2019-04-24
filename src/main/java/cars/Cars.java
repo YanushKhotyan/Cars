@@ -1,4 +1,4 @@
-package Cars;
+package cars;
 
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 

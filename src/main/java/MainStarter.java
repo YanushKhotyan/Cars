@@ -1,26 +1,21 @@
-import Cars.Bus;
+import jsonParser.JsonParser;
 
 import java.io.IOException;
 import java.util.Scanner;
 
+import static jsonParser.JsonConstants.JSON_CAR;
+
 public class MainStarter {
+
     public static void main(String[] args) throws IOException {
 
+        JsonParser jsonParser = new JsonParser(JSON_CAR);
         Scanner input = new Scanner(System.in);
-
-        System.out.print("What type of car do you want? Bus is 1, Passenger Car is 2, Truck is 3" + '\n'
-                + " Type of car  =  ");
+        System.out.print("Choose key? [Bus - 1, PassengerCar - 2, Truck - 3]" + '\n'
+                + " Key of car  =  ");
         int typeOfCar = input.nextInt();
-        System.out.println(typeOfCar);
 
-        if (typeOfCar == 1) {
-//            Bus bus = new Bus();
-//            bus.limitFuel();
-//            bus.speed();
-            System.out.println("What color and complications we have");
-
-
-        }
-
+        jsonParser.printCarByKey(typeOfCar);
+        System.out.println("Kaneshna Nixya sebe!");
     }
 }
