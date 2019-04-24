@@ -1,51 +1,75 @@
 package Cars;
 
-import org.codehaus.jackson.JsonProcessingException;
-import org.codehaus.jackson.map.ObjectMapper;
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
-import java.io.IOException;
-import java.util.Map;
+@JsonIgnoreProperties
+public class Bus extends Cars {
 
-import static org.hamcrest.CoreMatchers.containsString;
-import static org.junit.Assert.assertThat;
+    private int seatingCapacity;
+    private double topSpeed;
+    private String color;
+    private String name;
 
-public class Bus{
 
-
-    public Map<String, String> colors;
-
-    public Bus() {
-
+    public Bus(String model, String complication, int seatingCapacity, double topSpeed, String color, String name) {
+        super(model, complication);
+        this.seatingCapacity = seatingCapacity;
+        this.topSpeed = topSpeed;
+        this.color = color;
+        this.name = name;
     }
 
-    public void setColors(Map<String, String> colors) {
-        this.colors = colors;
+    public Bus(String model, String complication, String color, String name) {
+        super(model, complication);
+        this.color = color;
+        this.name = name;
     }
 
-    public Bus(String color) {
-
+    public String getColor() {
+        return color;
     }
 
-    public Map<String, String> getColors(){
-        return colors;
+    public void setColor(String color) {
+        this.color = color;
     }
 
-    public void jsonBus()
-            throws IOException {
-        Bus bus = new Bus("Color");
-        bus.add("Color1","Green");
-        bus.add("Color2","Red");
-        bus.add("Color3","White");
-
-        String result = new ObjectMapper().writeValueAsString(bus);
-
-        assertThat(result, containsString("Color1"));
-        assertThat(result, containsString("Color2"));
+    public String getName() {
+        return name;
     }
 
-    public void add(String color1, String green) {
+    public void setName(String name) {
+        this.name = name;
     }
 
+    @Override
+    public void speed() {
+        System.out.println("Bus speed is 100 km/h ");
+    }
 
+    @Override
+    public void limitFuel() {
+        System.out.println("Bus fuel limit is 500 km/h ");
+    }
 
+    public Bus(String model, String complication, int seatingCapacity, double topSpeed) {
+        super(model, complication);
+        this.seatingCapacity = seatingCapacity;
+        this.topSpeed = topSpeed;
+    }
+
+    public int getSeatingCapacity() {
+        return seatingCapacity;
+    }
+
+    public void setSeatingCapacity(int seatingCapacity) {
+        this.seatingCapacity = seatingCapacity;
+    }
+
+    public double getTopSpeed() {
+        return topSpeed;
+    }
+
+    public void setTopSpeed(double topSpeed) {
+        this.topSpeed = topSpeed;
+    }
 }

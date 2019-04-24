@@ -1,0 +1,22 @@
+{
+  "Colors": {
+    "colorGreen": "Green",
+    "colorRed": "Red",
+    "colorYell": "Yellow",
+    "colorBlue": "Blue",
+    "colorWhite": "White",
+    "colorBlack": "Black"
+  },
+  "maxSeats": {
+    "maxSeat10": "10",
+    "maxSeat20": "20",
+    "maxSeat30": "30",
+    "maxSeat40": "40",
+    "maxSeat50": "50"
+  },
+  "fuelReserve": {
+    "fuelReserveLong": "300",
+    "fuelReserveLonger": "400",
+    "fuelReserveTheLongest": "500"
+  }
+}

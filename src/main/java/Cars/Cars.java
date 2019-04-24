@@ -1,67 +1,36 @@
 package Cars;
 
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+
+@JsonIgnoreProperties
 public abstract class Cars {
 
-    private String color;
+    public abstract void speed();
 
-    private Boolean autoTransmission;
+    public abstract void limitFuel();
 
-    private int maxSeats;
+    private String model;
 
+    private String complication;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Cars cars = (Cars) o;
-
-        return maxSeats == cars.maxSeats;
+    public Cars(String model, String complication) {
+        this.model = model;
+        this.complication = complication;
     }
 
-    @Override
-    public int hashCode() {
-        return maxSeats;
+    public String getModel() {
+        return model;
     }
 
-    public int getMaxSeats() {
-        return maxSeats;
+    public void setModel(String model) {
+        this.model = model;
     }
 
-    public void setMaxSeats(int maxSeats) {
-        this.maxSeats = maxSeats;
+    public String getComplication() {
+        return complication;
     }
 
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public Boolean getAutoTransmission() {
-        return autoTransmission;
-    }
-
-    public void setAutoTransmission(Boolean autoTransmission) {
-        this.autoTransmission = autoTransmission;
-    }
-
-    public Cars(String color, Boolean autoTransmission, int maxSeats) {
-        this.color = color;
-        this.autoTransmission = autoTransmission;
-
-    }
-
-    public abstract void transportation();
-
-
-    @Override
-    public String toString() {
-        return "Cars{" +
-                "color='" + color + '\'' +
-                ", autoTransmission=" + autoTransmission +
-                '}';
+    public void setComplication(String complication) {
+        this.complication = complication;
     }
 }

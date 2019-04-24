@@ -1,0 +1,14 @@
+{
+  "Bus": {
+    "color": "Blue",
+    "name": "Aerobus"
+  },
+  "Truck": {
+    "weight": "7000 kg",
+    "thrust": "bla bla "
+  },
+  "PassengerCar": {
+    "maxSpeed": "300 km/h",
+    "lowCost": "600$"
+  }
+}
