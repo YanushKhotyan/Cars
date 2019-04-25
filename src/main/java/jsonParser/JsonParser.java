@@ -1,25 +1,27 @@
 package jsonParser;
 
 import cars.Bus;
-import cars.Cars;
 import cars.PassengerCar;
 import cars.Truck;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.type.TypeReference;
+import singleton.LazyInitializedSingleton;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Scanner;
+
 
 public class JsonParser {
 
-// jsonParser parser = new jsonParser();
+
 
     private String jsonFilePath;
     private HashMap<String, Object> jsonToMap = null;
     static ObjectMapper mapper = new ObjectMapper();
+
+    private static LazyInitializedSingleton instance;
 
     public JsonParser(String jsonFilePath) {
         this.jsonFilePath = jsonFilePath;

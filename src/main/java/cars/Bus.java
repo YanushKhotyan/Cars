@@ -10,6 +10,7 @@ public class Bus extends Cars {
     private String color;
     private String name;
 
+
     public Bus(String model, String complication)
     {
         super(model, complication);
