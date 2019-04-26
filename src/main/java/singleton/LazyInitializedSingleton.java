@@ -4,7 +4,7 @@ public class LazyInitializedSingleton {
 
     private static LazyInitializedSingleton instance;
 
-    private LazyInitializedSingleton() {
+    public LazyInitializedSingleton() {
     }
 
     public static LazyInitializedSingleton getInstance() {

@@ -21,7 +21,7 @@ public class JsonParser {
     private HashMap<String, Object> jsonToMap = null;
     static ObjectMapper mapper = new ObjectMapper();
 
-    private static LazyInitializedSingleton instance;
+    LazyInitializedSingleton lazyInitializedSingleton = new LazyInitializedSingleton();
 
     public JsonParser(String jsonFilePath) {
         this.jsonFilePath = jsonFilePath;

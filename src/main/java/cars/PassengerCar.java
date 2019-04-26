@@ -1,11 +1,15 @@
 package cars;
 
+import singleton.LazyInitializedSingleton;
+
 public class PassengerCar extends Cars{
 
     private String nameOfTuningStudio;
     private String automaticTransmission;
     private String lowCost;
     private String maxSpeed;
+
+    LazyInitializedSingleton lazyInitializedSingleton = new LazyInitializedSingleton();
 
     public PassengerCar(String model, String complication, String nameOfTuningStudio, String automaticTransmission, String lowCost, String maxSpeed) {
         super(model, complication);
@@ -19,14 +23,6 @@ public class PassengerCar extends Cars{
         super(model, complication);
     }
 
-    public String getLowCost() {
-        return this.lowCost;
-    }
-
-    public String getMaxSpeed() {
-        return this.maxSpeed;
-    }
-
     @Override
     public void speed() {
         System.out.println("Bus speed is 250 km/h ");
@@ -35,14 +31,6 @@ public class PassengerCar extends Cars{
     @Override
     public void limitFuel() {
         System.out.println("Bus fuel limit is 600 km/h ");
-    }
-
-    public String getNameOfTuningStudio() {
-        return this.nameOfTuningStudio;
-    }
-
-    public String getAutomaticTransmission() {
-        return this.automaticTransmission;
     }
 
     @Override
@@ -55,11 +43,27 @@ public class PassengerCar extends Cars{
                 '}';
     }
 
+    public String getNameOfTuningStudio() {
+        return this.nameOfTuningStudio;
+    }
+
+    public String getAutomaticTransmission() {
+        return this.automaticTransmission;
+    }
+
     public void setMaxSpeed(String maxSpeed) {
         this.maxSpeed = maxSpeed;
     }
 
     public void setLowCost(String lowCost) {
         this.nameOfTuningStudio = lowCost;
+    }
+
+    public String getLowCost() {
+        return this.lowCost;
+    }
+
+    public String getMaxSpeed() {
+        return this.maxSpeed;
     }
 }

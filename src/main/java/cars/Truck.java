@@ -1,43 +1,42 @@
 package cars;
 
+import singleton.LazyInitializedSingleton;
+
 public class Truck extends Cars {
 
 
     private String weight;
     private String thrust;
+    private double payloadCapasity;
 
-    public String getWeight() {
-        return weight;
+    LazyInitializedSingleton lazyInitializedSingleton = new LazyInitializedSingleton();
+
+    public Truck(String model, String complication) {
+        super(model, complication);
+        this.weight = weight;
+        this.thrust = thrust;
+        this.payloadCapasity = payloadCapasity;
     }
 
-    @Override
-    public String toString() {
-        return "Truck{" +
-                "weight='" + weight + '\'' +
-                ", thrust='" + thrust + '\'' +
-                ", payloadCapasity=" + payloadCapasity +
-                '}';
+    public String getThrust() {
+        return this.thrust;
+    }
+
+    public String getWeight() {
+        return this.weight;
+    }
+
+    public double getPayloadCapasity() {
+        return this.payloadCapasity;
     }
 
     public void setWeight(String weight) {
         this.weight = weight;
     }
 
-    public String getThrust() {
-        return thrust;
-    }
-
     public void setThrust(String thrust) {
-        this.thrust = thrust;
+        this.weight = thrust;
     }
-
-    public Truck(String model, String complication, String weight, String thrust) {
-        super(model, complication);
-        this.weight = weight;
-        this.thrust = thrust;
-    }
-
-    private double payloadCapasity;
 
     @Override
     public void speed() {
@@ -49,16 +48,14 @@ public class Truck extends Cars {
         System.out.println("Truck fuel limit is 1000 km/h ");
     }
 
-    public Truck(String model, String complication) {
-        super(model, complication);
-        this.payloadCapasity = payloadCapasity;
+    @Override
+    public String toString() {
+        return "Truck{" +
+                "weight='" + weight + '\'' +
+                ", thrust='" + thrust + '\'' +
+                ", payloadCapasity=" + payloadCapasity +
+                '}';
     }
 
-    public double getPayloadCapasity() {
-        return payloadCapasity;
-    }
 
-    public void setPayloadCapasity(double payloadCapasity) {
-        this.payloadCapasity = payloadCapasity;
-    }
 }
