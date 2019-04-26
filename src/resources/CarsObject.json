@@ -10,5 +10,38 @@
   "PassengerCar": {
     "maxSpeed": "300 km/h",
     "lowCost": "600$"
+  },
+  "Mercedes": {
+    "colorCustom": "Custom",
+    "colorWhite": "White",
+    "colorBlack": "Black",
+    "modelE211": "e211",
+    "modelE212": "e212",
+    "modelE213": "e213",
+    "fourSecondTo100KmH": "4 second",
+    "sevenSecondTo100KmH": "7 second",
+    "twelveSecondTo100KmH": "12 second",
+    "twoLiterMotor": "2.0 cdi",
+    "treeLiterMotor": "3.0 cdi",
+    "sixAndTreeLiterMotor": "6.3 AMG"
+  },
+  "Colors": {
+    "color": "Green",
+    "color": "Red",
+    "color": "Yellow",
+    "color": "Blue"
+  },
+  "SecondTo100km": {
+    "second": "4 seconds",
+    "second": "7 seconds",
+    "second": "12 seconds",
+    "second": "15 seconds"
+  },
+  "Horsepower": {
+    "horsepower": "150Hp",
+    "horsepower": "200Hp",
+    "horsepower": "270Hp",
+    "horsepower": "400Hp"
   }
+
 }

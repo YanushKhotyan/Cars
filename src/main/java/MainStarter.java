@@ -28,9 +28,11 @@ public class MainStarter {
         System.out.println("Choose key? [Bus - 1, PassengerCar - 2, Truck - 3]" + '\n'
                 + " Key of car  =  ");
 
-        int typeOfCar = input.nextInt();
+//        int typeOfCar = input.nextInt();
+        int favoriteCar = input.nextInt();
 
-        jsonParser.printCarByKey(typeOfCar);
+//        jsonParser.printCarByKey(typeOfCar);
+        jsonParser.getYourFavoriteCar(favoriteCar);
 
         logger.info("Kaneshna Nixya sebe!");
     }
