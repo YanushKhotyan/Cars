@@ -3,6 +3,7 @@ package jsonParser;
 import cars.Bus;
 import cars.PassengerCar;
 import cars.Truck;
+import org.apache.log4j.Logger;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.type.TypeReference;
 import singleton.LazyInitializedSingleton;
@@ -23,6 +24,8 @@ public class JsonParser {
 
     LazyInitializedSingleton lazyInitializedSingleton = new LazyInitializedSingleton();
 
+    Logger logger = Logger.getLogger(JsonParser.class);
+
     public JsonParser(String jsonFilePath) {
         this.jsonFilePath = jsonFilePath;
     }
@@ -36,7 +39,7 @@ public class JsonParser {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println("JSON file was serialized to Map!");
+        logger.info("JSON file was serialized to Map!");
         return jsonToMap;
     }
 
@@ -84,16 +87,16 @@ public class JsonParser {
 
         switch (input) {
             case 1:
-                System.out.println(this.getBus("Bus").toString());
+                logger.info(this.getBus("Bus").toString());
                 break;
             case 2:
-                System.out.println(this.getTruck("Truck").toString());
+                logger.info(this.getTruck("Truck").toString());
                 break;
             case 3:
-                System.out.println(this.getPassagerCar("PassengerCar").toString());
+                logger.info(this.getPassagerCar("PassengerCar").toString());
                 break;
             default:
-                System.out.println("Car type is not found!");
+                logger.info("Car type is not found!");
         }
     }
 }
