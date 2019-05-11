@@ -147,12 +147,12 @@ public class JsonParser {
     }
 
     HashMap mercedesE211 = new HashMap();
-    mercedesE211.put("colorWhite", "White");
+
     public void getYourFavoriteCar(int favoriteCar) {
 
         switch (favoriteCar) {
             case 1:
-                for(Mercedes mercedes: this.getMercedes("Mercedes")){
+                for(Mercedes mercedes: this.getMercedes("Seconds")){
                     System.out.println();
                 }
                 logger.info(this.getMercedes("Mercedes").getColorWhite().toString()); logger.info(this.getMercedes("Mercedes").getTwelveSecondTo100KmH().toString());
