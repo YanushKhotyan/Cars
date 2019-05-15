@@ -1,51 +1,51 @@
 package cars;
 
-import singleton.LazyInitializedSingleton;
+import singleton.Singleton;
 
 public class Porshe {
-    LazyInitializedSingleton lazyInitializedSingleton = new LazyInitializedSingleton();
+    Singleton singleton = new Singleton();
 
-    private String Color;
-    private String SecondTo100km;
-    private String Horsepower;
+    private String colors;
+    private String horsepower;
+    private String seconds;
 
 
-    public Porshe(String color, String seconTo100km, String horsepower) {
-        Color = color;
-        SecondTo100km = seconTo100km;
-        Horsepower = horsepower;
+    public Porshe() {
+        this.colors = colors;
+        this.horsepower = horsepower;
+        this.seconds = seconds;
     }
 
     @Override
     public String toString() {
         return "Porshe{" +
-                "Color='" + Color + '\'' +
-                ", SeconTo100km='" + SecondTo100km + '\'' +
-                ", Horsepower='" + Horsepower + '\'' +
+                "colors='" + colors + '\'' +
+                ", horsepower='" + horsepower + '\'' +
+                ", seconds='" + seconds + '\'' +
                 '}';
     }
 
-    public String getColor() {
-        return Color;
+    public String getColors() {
+        return colors;
     }
 
-    public void setColor(String color) {
-        Color = color;
-    }
-
-    public String getSeconTo100km() {
-        return SecondTo100km;
-    }
-
-    public void setSeconTo100km(String seconTo100km) {
-        SecondTo100km = seconTo100km;
+    public void setColors(String colors) {
+        this.colors = colors;
     }
 
     public String getHorsepower() {
-        return Horsepower;
+        return horsepower;
     }
 
     public void setHorsepower(String horsepower) {
-        Horsepower = horsepower;
+        this.horsepower = horsepower;
+    }
+
+    public String getSeconds() {
+        return seconds;
+    }
+
+    public void setSeconds(String seconds) {
+        this.seconds = seconds;
     }
 }

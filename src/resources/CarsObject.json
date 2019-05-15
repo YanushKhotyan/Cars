@@ -26,22 +26,27 @@
     "sixAndTreeLiterMotor": "6.3 AMG"
   },
   "Colors": {
-    "color": "Green",
-    "color": "Red",
-    "color": "Yellow",
-    "color": "Blue"
+    "colors": [
+      "Green",
+      "Red",
+      "Yellow",
+      "Blue"
+    ]
   },
   "SecondTo100km": {
-    "second": "4 seconds",
-    "second": "7 seconds",
-    "second": "12 seconds",
-    "second": "15 seconds"
+    "seconds": [
+      "4 seconds",
+      "7 seconds",
+      "12 seconds",
+      "15 seconds"
+    ]
   },
   "Horsepower": {
-    "horsepower": "150Hp",
-    "horsepower": "200Hp",
-    "horsepower": "270Hp",
-    "horsepower": "400Hp"
+    "horsepower": [
+      "150Hp",
+      "400Hp",
+      "270Hp",
+      "200Hp"
+    ]
   }
-
 }

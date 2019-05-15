@@ -1,9 +1,9 @@
 package jsonParser;
 
-import singleton.LazyInitializedSingleton;
+import singleton.Singleton;
 
 public class JsonConstants {
-    LazyInitializedSingleton lazyInitializedSingleton = new LazyInitializedSingleton();
+    Singleton singleton = new Singleton();
 
     public static final String JSON_CAR = "src/resources/CarsObject.json";
 }

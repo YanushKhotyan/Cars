@@ -1,6 +1,6 @@
 package cars;
 
-import singleton.LazyInitializedSingleton;
+import singleton.Singleton;
 
 public class PassengerCar extends Cars{
 
@@ -9,7 +9,7 @@ public class PassengerCar extends Cars{
     private String lowCost;
     private String maxSpeed;
 
-    LazyInitializedSingleton lazyInitializedSingleton = new LazyInitializedSingleton();
+    Singleton singleton = new Singleton();
 
     public PassengerCar(String model, String complication, String nameOfTuningStudio, String automaticTransmission, String lowCost, String maxSpeed) {
         super(model, complication);

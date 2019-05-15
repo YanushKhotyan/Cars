@@ -4,26 +4,24 @@ import cars.*;
 import org.apache.log4j.Logger;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.type.TypeReference;
-import singleton.LazyInitializedSingleton;
+import singleton.Singleton;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 
 public class JsonParser {
 
 
-
     private String jsonFilePath;
     private HashMap<String, Object> jsonToMap = null;
+    private HashMap<Integer, String> jsonToMapToList = null;
     static ObjectMapper mapper = new ObjectMapper();
 
-    LazyInitializedSingleton lazyInitializedSingleton = new LazyInitializedSingleton();
+    Singleton singleton = new Singleton();
 
     Logger logger = Logger.getLogger(JsonParser.class);
-    private String favoriteCar;
 
     public JsonParser(String jsonFilePath) {
         this.jsonFilePath = jsonFilePath;
@@ -42,18 +40,6 @@ public class JsonParser {
         return jsonToMap;
     }
 
-    public HashMap<String, Object> getJsonMap1() {
-        try {
-            jsonToMap = mapper.readValue(
-                    new File(jsonFilePath),
-                    new TypeReference<Map<String, Object>>() {
-                    });
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        logger.info("JSON file was serialized to Map!");
-        return jsonToMap;
-    }
 
     public Bus getBus(String jsonKey) {
         jsonToMap = null;
@@ -99,7 +85,7 @@ public class JsonParser {
 
         jsonToMap = null;
 
-        Mercedes mercedes = new Mercedes("Mercedes","Benz");
+        Mercedes mercedes = new Mercedes("Mercedes", "Benz");
 
         try {
 
@@ -146,16 +132,42 @@ public class JsonParser {
         }
     }
 
-    HashMap mercedesE211 = new HashMap();
+    public Porshe getCustomCar(String jsonKey) {
+        jsonToMap = null;
+        Porshe porshe = new Porshe();
+
+        try {
+            jsonToMapToList = (HashMap<Integer, String>) getJsonMap().get(jsonKey);
+
+            HashMap<Integer, String> map = new HashMap<Integer, String>();
+            map.put(1, "Green");
+            map.put(2, "Red");
+            map.put(3, "Yellow");
+            map.put(4, "Blue");
+
+            List<String> list = new ArrayList<String>(map.values());
+            for (String s : list) {
+                System.out.println(s);
+            }
+
+            porshe.setColors((String) jsonToMap.get("Green"));
+            porshe.setSeconds((String) jsonToMap.get("4 seconds"));
+            porshe.setHorsepower((String) jsonToMap.get("150Hp"));
+
+
+
+        } catch (Exception e) {
+            e.getLocalizedMessage();
+        }
+        return porshe;
+    }
 
     public void getYourFavoriteCar(int favoriteCar) {
 
         switch (favoriteCar) {
             case 1:
-                for(Mercedes mercedes: this.getMercedes("Seconds")){
-                    System.out.println();
-                }
-                logger.info(this.getMercedes("Mercedes").getColorWhite().toString()); logger.info(this.getMercedes("Mercedes").getTwelveSecondTo100KmH().toString());
+                logger.info(this.getMercedes("Mercedes").getColorWhite().toString());
+                logger.info(this.getMercedes("Mercedes").getTwelveSecondTo100KmH().toString());
                 logger.info(this.getMercedes("Mercedes").getModelE211().toString());
                 logger.info(this.getMercedes("Mercedes").getTwoLiterMotor().toString());
                 break;
@@ -168,6 +180,11 @@ public class JsonParser {
             case 4:
                 logger.info(this.getMercedes("Mercedes").getColorBlack().toString());
                 break;
+            case 5:
+                logger.info(this.getCustomCar("Colors").getColors().toString());
+                logger.info(this.getCustomCar("Hoursepower").getHorsepower().toString());
+                logger.info(this.getCustomCar("SecondTo100km").getSeconds().toString());
+
             default:
                 logger.info("Car type is not found!");
                 break;

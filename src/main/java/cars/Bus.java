@@ -1,7 +1,7 @@
 package cars;
 
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
-import singleton.LazyInitializedSingleton;
+import singleton.Singleton;
 
 @JsonIgnoreProperties
 public class Bus extends Cars {
@@ -11,7 +11,8 @@ public class Bus extends Cars {
     private String color;
     private String name;
 
-    LazyInitializedSingleton lazyInitializedSingleton = new LazyInitializedSingleton();
+    Singleton singleton = new Singleton();
+    Singleton bus = new Singleton();
 
     public Bus(String model, String complication) {
         super(model, complication);

@@ -1,6 +1,6 @@
 package cars;
 
-import singleton.LazyInitializedSingleton;
+import singleton.Singleton;
 
 public class Truck extends Cars {
 
@@ -9,7 +9,7 @@ public class Truck extends Cars {
     private String thrust;
     private double payloadCapasity;
 
-    LazyInitializedSingleton lazyInitializedSingleton = new LazyInitializedSingleton();
+    Singleton singleton = new Singleton();
 
     public Truck(String model, String complication) {
         super(model, complication);

@@ -1,10 +1,10 @@
 package cars;
 
-import singleton.LazyInitializedSingleton;
+import singleton.Singleton;
 
 public class Mercedes extends Cars{
 
-    LazyInitializedSingleton lazyInitializedSingleton = new LazyInitializedSingleton();
+    Singleton singleton = new Singleton();
 
     private String colorWhite;
     private String colorBlack;
@@ -69,13 +69,13 @@ public class Mercedes extends Cars{
         this.model = model;
     }
 
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
+//    public String getType() {
+//        return type;
+//    }
+//
+//    public void setType(String type) {
+//        this.type = type;
+//    }
 
     @Override
     public String toString() {
