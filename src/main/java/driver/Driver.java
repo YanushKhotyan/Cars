@@ -9,7 +9,7 @@ public class Driver {
 
     public WebDriver getChromeWebDriver() {
         if (chromeWebDriver == null) {
-            System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver", "C:\\Users\\khotyan.y\\IdeaProjects\\Cars54\\src\\resources\\chromedriver.exe");
             chromeWebDriver =  new ChromeDriver();
         }
         return chromeWebDriver;

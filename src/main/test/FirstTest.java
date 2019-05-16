@@ -10,7 +10,9 @@ public class FirstTest {
     @Test
     public void firstTest() {
         WebDriver driver = new Driver().getChromeWebDriver();
-        driver.get("http://mycompany.site.com");
-        WebElement element = driver.findElement(By.id("#element_id"));
+        driver.get("http://s13.ru/");
+        WebElement element = driver.findElement(By.xpath("//a[text()='Главная']"));
+        element.click();
+        driver.close();
     }
 }
