@@ -5,6 +5,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class FirstTest extends CarPage{
 
@@ -19,13 +22,26 @@ public class FirstTest extends CarPage{
 
     @Test
     public  void searchTheBestCar(){
+
+        List<WebElement> mercedesBenz;
         WebDriver driver = new Driver().getChromeWebDriver();
         driver.get("https://av.by/");
-        driver.findElement(tab).click();
-        Select dropdown = new Select(driver.findElement(By.name("brand_id[]")));
-        dropdown.selectByVisibleText("Mercedes-Benz"); //dropdown.selectByValue("prog");
-        WebElement element = driver.findElement(By.xpath("//div[contains(@class, 'tabsfilter-content-item tabsfilter-content-item--quart')]"));
-        element.click();
+
+        driver.findElement(tabToMakeCar).click();
+
+        Select selectMakeCar = new Select(driver.findElement(By.name("brand_id[]")));
+
+        selectMakeCar.selectByValue("5898");
+
+        driver.findElement(tabToModelCar).click();
+
+        Select selectModelCar = new Select(driver.findElement(By.name("model_id[]")));
+        selectModelCar.selectByValue("5898");
+
+        driver.findElement(tabToSearchButton).click();
+
+        List<WebElement> elementList = driver.findElements(tabToMakeCar);
+
         driver.close();
     }
 }

@@ -4,3 +4,5 @@
 2019-05-17 10:54:59 INFO  WorkShop:27 - Index: 1
 2019-05-17 10:54:59 INFO  WorkShop:28 - Array: 3
 2019-05-17 10:54:59 INFO  WorkShop:29 - To array:[Fiat, Mercedes-benz, Audi]
+2019-05-17 16:14:02 INFO  carsList:21 - Array: 3
+2019-05-17 16:14:02 INFO  carsList:22 - To array:[Mercedes-benz, Audi, BMW]
