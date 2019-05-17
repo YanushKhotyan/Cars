@@ -9,10 +9,10 @@ public class Driver {
 
     public WebDriver getChromeWebDriver() {
         if (chromeWebDriver == null) {
-            System.setProperty("webdriver.chrome.driver", "C:\\Users\\khotyan.y\\IdeaProjects\\Cars54\\src\\resources\\chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver", "/Users/julianakhilnitskaza/IdeaProjects/Training/Cars/src/resources/chromedriver 2");
+            //System.setProperty("webdriver.chrome.driver", "C:\\Users\\khotyan.y\\IdeaProjects\\Cars54\\src\\resources\\chromedriver.exe");
             chromeWebDriver =  new ChromeDriver();
         }
         return chromeWebDriver;
     }
-
 }

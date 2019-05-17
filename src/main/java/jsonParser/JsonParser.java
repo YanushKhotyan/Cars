@@ -85,7 +85,7 @@ public class JsonParser {
 
         jsonToMap = null;
 
-        Mercedes mercedes = new Mercedes("Mercedes", "Benz");
+        Mercedes mercedes = new Mercedes("Mercedes-benz", "Benz");
 
         try {
 
