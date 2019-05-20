@@ -1,17 +1,26 @@
 package driver;
 
+import org.junit.Before;
+import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxProfile;
+import propertyReader.PropertyReader;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Properties;
 
 public class Driver {
 
 
     private WebDriver driver;
 
-
-    public WebDriver getChromeWebDriverMac(String value) {
-
+    public WebDriver getWebDriver(String value) {
+        PropertyReader prop = new PropertyReader();
         switch (value) {
             case "chromeMac":
 
@@ -41,9 +50,11 @@ public class Driver {
             case "fireFoxWindow":
 
                 if (driver == null) {
-                    //На рабочем компе скопировать путь к файлу
-                    System.setProperty("webdriver.gecko.driver", "");
-                    driver = new FirefoxDriver();
+                    //System.setProperty("webdriver.gecko.driver", "C:\\Users\\khotyan.y\\IdeaProjects\\Cars3\\src\\resources\\geckodriver.exe");
+                    FirefoxProfile fp = new FirefoxProfile();
+                    fp.setAcceptUntrustedCertificates(true);
+                    fp.containsWebDriverExtension();
+                    driver = new FirefoxDriver(fp);
                 }
                 break;
 
@@ -51,16 +62,6 @@ public class Driver {
         return driver;
     }
 }
-//    public WebDriver getChromeWebDriverWindow() {
-//
-//    }
-//
-//    public WebDriver getGeckdriverWebDriverFireFoxMac() {
-//
-//    }
-//
-//    public WebDriver getGeckdriverWebDriverFireFoxWindow() {
-//
-//    }
+
 
 
