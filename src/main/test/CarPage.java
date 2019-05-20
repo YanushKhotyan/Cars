@@ -8,5 +8,4 @@ public class CarPage {
 
     public final By tabToSearchButton= By.xpath("//div[contains(@class, 'tabsfilter-content-item tabsfilter-content-item--submit')]");
 
-    public final By getList= By.xpath("//div[contains(@class, 'tabsfilter-content-item tabsfilter-content-item--submit')]");
 }
