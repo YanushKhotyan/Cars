@@ -5,6 +5,8 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.Select;
 import propertyReader.PropertyReader;
 
@@ -30,9 +32,8 @@ public class FirstTest extends CarPage {
     public void instanseWebDriver() {
         PropertyReader prop = new PropertyReader();
         driver = new Driver().getWebDriver(prop.getDriverName());
-        // Добавить ожидания
-
     }
+
 
     @Test
     public void searchTheBestCar() {
@@ -64,6 +65,7 @@ public class FirstTest extends CarPage {
 
     @After
     public void afterTest(){
-        driver.close();
+        driver.quit();
     }
+
 }

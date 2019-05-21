@@ -1,18 +1,12 @@
 package driver;
 
-import org.junit.Before;
-import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import propertyReader.PropertyReader;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.Properties;
 
 public class Driver {
 
@@ -43,14 +37,17 @@ public class Driver {
 
                 if (driver == null) {
                     System.setProperty("webdriver.gecko.driver", "/Users/julianakhilnitskaza/IdeaProjects/Training/Cars/src/resources/geckodriver");
-                    driver = new FirefoxDriver();
+                    FirefoxProfile fp = new FirefoxProfile();
+                    fp.setAcceptUntrustedCertificates(true);
+                    fp.containsWebDriverExtension();
+                    driver = new FirefoxDriver(fp);
                 }
                 break;
 
             case "fireFoxWindow":
 
                 if (driver == null) {
-                    //System.setProperty("webdriver.gecko.driver", "C:\\Users\\khotyan.y\\IdeaProjects\\Cars3\\src\\resources\\geckodriver.exe");
+                    System.setProperty("webdriver.gecko.driver", "C:\\Users\\khotyan.y\\IdeaProjects\\Cars3\\src\\resources\\geckodriver.exe");
                     FirefoxProfile fp = new FirefoxProfile();
                     fp.setAcceptUntrustedCertificates(true);
                     fp.containsWebDriverExtension();
