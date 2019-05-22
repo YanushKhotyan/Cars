@@ -5,7 +5,7 @@ import java.util.Properties;
 
 public class PropertyReader {
     private Properties properties;
-    private final String propertyFilePath= "//Users/julianakhilnitskaza/IdeaProjects/Training/Cars/src/resources/config.properties";
+    private final String propertyFilePath= "C:\\Users\\khotyan.y\\IdeaProjects\\Cars3\\src\\resources\\config.properties";
 
 
     public PropertyReader(){

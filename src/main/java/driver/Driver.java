@@ -11,10 +11,9 @@ import propertyReader.PropertyReader;
 public class Driver {
 
 
-    private WebDriver driver;
+    public static WebDriver driver = null;
 
     public WebDriver getWebDriver(String value) {
-        PropertyReader prop = new PropertyReader();
         switch (value) {
             case "chromeMac":
 

@@ -7,6 +7,7 @@ import cucumber.api.java.en.When;
 public class LoginBDDStep {
     // инстансе тест логина
 
+
     @Given("a user with correct data present")
     public void aUserWithCorrectDataPresent() {
         System.out.println("Step1");
@@ -21,4 +22,5 @@ public class LoginBDDStep {
     public void homePageIsAvailable() {
         System.out.println("Step3");
     }
+
 }
