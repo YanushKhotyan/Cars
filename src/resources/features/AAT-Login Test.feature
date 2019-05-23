@@ -21,3 +21,4 @@ Feature: AAT - login feature
     Examples:
       | login                 | password |
       | info.yanush@gmail.com | Qwer1234 |
+
