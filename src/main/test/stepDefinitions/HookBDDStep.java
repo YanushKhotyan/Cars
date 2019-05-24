@@ -14,6 +14,7 @@ public class HookBDDStep {
     public void instanceWebDriver() {
         PropertyReader prop = new PropertyReader();
         new Driver().getWebDriver(prop.getDriverName());
+        driver.manage().window().maximize();
     }
 
     @After
