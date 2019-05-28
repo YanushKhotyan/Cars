@@ -8,7 +8,8 @@ import stepDefinitions.HookBDDStep;
 import test.FirstTest;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "C:\\Users\\khotyan.y\\IdeaProjects\\Cars3\\src\\resources\\features\\AAT-Login Test.feature", glue = "")
+//@CucumberOptions(features = "C:\\Users\\khotyan.y\\IdeaProjects\\Cars3\\src\\resources\\features\\AAT-Login Test.feature", glue = "")
+@CucumberOptions(features = "C:\\Users\\khotyan.y\\IdeaProjects\\Cars3\\src\\resources\\features\\AAT-SignIn Test.feature", glue = "")
 public class Runner {
 
 
