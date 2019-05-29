@@ -14,6 +14,5 @@ public class SignInOropay extends UISinginForm {
         return new HomePageOropay();
     }
 
-    public SignInOropay() {
-    }
+
 }

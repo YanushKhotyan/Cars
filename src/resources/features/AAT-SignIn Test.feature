@@ -6,5 +6,5 @@ Feature: AAT - Sign In feature
     Given a customer try to sign in with <login> and <password>
     When the customer sing in to home page
     Examples:
-      | login               | password |
-      | firstTest@gmail.com | Qwe123   |
+      | login      | password |
+      | test@mm.mm | Qwe123   |

@@ -6,12 +6,16 @@ import static driver.Driver.driver;
 
 public class HomePageOropay extends HomePageUI {
 
-    public SignInOropay logOut(){
+    public SignInOropay logOut() {
         driver.findElement(tabToUserMenuButton).click();
         driver.findElement(tabToLogoutButton).click();
         return new SignInOropay();
     }
 
-    public HomePageOropay() {
-    }
+//    public SignInOropay logOut(){
+//        driver.findElement(tabToUserMenuButton).click();
+//        driver.findElement(tabToLogoutButton).click();
+//        return new SignInOropay();
+//    }
+
 }
